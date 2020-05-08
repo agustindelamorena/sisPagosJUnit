@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edd.junit</groupId>
@@ -14,6 +14,10 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
+    <sonar.projectKey>agustindelamorena_sisPagosJUnit</sonar.projectKey>
+    <sonar.organization>54355828ch</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.login>5b2655db8eab341354feed3caecc9c022bab244e</sonar.login>
   </properties>
 
   <dependencies>
@@ -45,34 +49,55 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.2</version>
+        <version>3.0.0-M4</version>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-assembly-plugin</artifactId>-->
-<!--        <version>2.4.1</version>-->
-<!--        <configuration>-->
-<!--          <descriptorRefs>-->
-<!--            //Sufijo que se le agregara al fichero JAR ejecutable-->
-<!--            <descriptorRef>jar-with-dependencies</descriptorRef>-->
-<!--          </descriptorRefs>-->
-<!--          <archive>-->
-<!--            <manifest>-->
-<!--              //Aqui se establece el nombre de la clase principal-->
-<!--              <mainClass>des.maquina.Main</mainClass>-->
-<!--            </manifest>-->
-<!--          </archive>-->
-<!--        </configuration>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>make-assembly</id>-->
-<!--            <phase>package</phase>-->
-<!--            <goals>-->
-<!--              <goal>single</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
+      <!--      <plugin>-->
+      <!--        <groupId>org.apache.maven.plugins</groupId>-->
+      <!--        <artifactId>maven-assembly-plugin</artifactId>-->
+      <!--        <version>2.4.1</version>-->
+      <!--        <configuration>-->
+      <!--          <descriptorRefs>-->
+      <!--            //Sufijo que se le agregara al fichero JAR ejecutable-->
+      <!--            <descriptorRef>jar-with-dependencies</descriptorRef>-->
+      <!--          </descriptorRefs>-->
+      <!--          <archive>-->
+      <!--            <manifest>-->
+      <!--              //Aqui se establece el nombre de la clase principal-->
+      <!--              <mainClass>des.maquina.Main</mainClass>-->
+      <!--            </manifest>-->
+      <!--          </archive>-->
+      <!--        </configuration>-->
+      <!--        <executions>-->
+      <!--          <execution>-->
+      <!--            <id>make-assembly</id>-->
+      <!--            <phase>package</phase>-->
+      <!--            <goals>-->
+      <!--              <goal>single</goal>-->
+      <!--            </goals>-->
+      <!--          </execution>-->
+      <!--        </executions>-->
+      <!--      </plugin>-->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.3</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <!-- attached to Maven test phase -->
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
+

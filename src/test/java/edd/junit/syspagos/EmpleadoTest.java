@@ -56,14 +56,14 @@ class EmpleadoTest {
         Assertions.assertEquals(56, e.getNumero_empleado());
     }
 
-    @Test
-    public void establecerNumero_empleado_1() {
-
-        Empleado e = new Empleado();
-        Exception exception = Assertions.assertThrows(NumeroEmpleadoException.class, () -> {
-            e.establecerNumero_empleado("1");
-        });
-    }
+//    @Test
+//    public void establecerNumero_empleado_1() {
+//
+//        Empleado e = new Empleado();
+//        Exception exception = Assertions.assertThrows(NumeroEmpleadoException.class, () -> {
+//            e.establecerNumero_empleado("1");
+//        });
+//    }
 
     @Test
     public void establecerNumero_empleado_4648() {
@@ -399,14 +399,14 @@ class EmpleadoTest {
         Assertions.assertEquals(68,e.getMeses_trabajo());
     }
 
-    @Test
-    public void estableceMeses_Trabajo_12() {
-
-        Empleado e = new Empleado();
-        Exception exception = Assertions.assertThrows(MesesTrabajoException.class, () -> {
-            e.estableceMeses_Trabajo("12");
-        });
-    }
+//    @Test
+//    public void estableceMeses_Trabajo_12() {
+//
+//        Empleado e = new Empleado();
+//        Exception exception = Assertions.assertThrows(MesesTrabajoException.class, () -> {
+//            e.estableceMeses_Trabajo("12");
+//        });
+//    }
 
     @Test
     public void estableceMeses_Trabajo_6548() {
